@@ -36,8 +36,9 @@ export class EspacoComponent implements OnInit {
   initBolinhas() {
     let x = 0;
     let y = 0;
+    let passo=2*Math.PI/this.N;
     for (let i = 0; i < this.N; i++) {
-      let b = new Bolinha(i%2==0?0:this.TX,i%5==0?0:this.TY,x+500,y+100);
+      let b = new Bolinha(500+Math.cos(i*passo)*200,100+Math.sin(i*passo)*200,  x+500,y+100);
       //b.x = x+500;
       //b.y = y+100;
       this.bolinhas.push(b);
